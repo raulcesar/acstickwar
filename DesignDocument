@@ -1,0 +1,23 @@
+Simple war game on very limited field
+Screens:
+1) - Map selection screen
+2) - Battle screen
+
+Characters:
+1) - Infantry
+2) - Knight
+3) - Giant
+4) - Mage
+
+Buildings:
+1) - Base
+
+Screens:
+1) - The map screen should have nodes that you can select the nation to battle in
+2) - A scrolling paralax view with 3 layers:
+    2.1) - War path (where actual game play takes place)
+    2.2) - Mountains
+    2.3) - Clouds (individual clouds can travel on layer (very slowly))
+
+
+
