@@ -61,7 +61,7 @@ bool HelloWorld::init()
     _batchNode->addChild(_ship, 1);
 
     // 1) Create the CCParallaxNode
-    _backgroundNode = CCParallaxNodeExtras::node(); //1
+    _backgroundNode = CCParallaxNodeExtras::create(); //1
     this->addChild(_backgroundNode, -1);
 
     // 2) Create the sprites will be added to the CCParallaxNode
@@ -83,6 +83,7 @@ bool HelloWorld::init()
     _backgroundNode->addChild(_planetsunrise, -1, bgSpeed, ccp(600, winSize.height * 0));
     _backgroundNode->addChild(_spacialanomaly, -1, bgSpeed, ccp(900, winSize.height * 0.3));
     _backgroundNode->addChild(_spacialanomaly2, -1, bgSpeed, ccp(1500, winSize.height * 0.9));
+    HelloWorld::addChild(ParticleSystemQuad::create("Stars1.plist"));
 
     this->scheduleUpdate();
 
@@ -117,10 +118,10 @@ void HelloWorld::update(float dt)
         CCSprite *spaceDust = (CCSprite *)(spaceDusts->objectAtIndex(ii));
         float xPosition = _backgroundNode->convertToWorldSpace(spaceDust->getPosition()).x;
         float size = spaceDust->getContentSize().width;
-        if (xPosition < -size / 2)
-        {
-            _backgroundNode->incrementOffset(ccp(spaceDust->getContentSize().width * 2, 0), spaceDust);
-        }
+        // if (xPosition < -size / 2)
+        // {
+        //     _backgroundNode->incrementOffset(ccp(spaceDust->getContentSize().width * 2, 0), spaceDust);
+        // }
     }
 
     CCArray *backGrounds = CCArray::createWithCapacity(4);
