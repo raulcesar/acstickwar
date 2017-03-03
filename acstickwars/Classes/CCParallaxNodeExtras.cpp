@@ -16,7 +16,7 @@ class PointObject : public Ref
 };
 
 // Need to provide a constructor
-CCParallaxNodeExtras::create()
+CCParallaxNodeExtras *CCParallaxNodeExtras::create()
 {
     // Create an instance of InfiniteParallaxNode
     CCParallaxNodeExtras *node = new CCParallaxNodeExtras();

@@ -129,14 +129,15 @@ void HelloWorld::update(float dt)
     backGrounds->addObject(_planetsunrise);
     backGrounds->addObject(_spacialanomaly);
     backGrounds->addObject(_spacialanomaly2);
-    for (int ii = 0; ii < backGrounds->count(); ii++)
-    {
-        CCSprite *background = (CCSprite *)(backGrounds->objectAtIndex(ii));
-        float xPosition = _backgroundNode->convertToWorldSpace(background->getPosition()).x;
-        float size = background->getContentSize().width;
-        if (xPosition < -size)
-        {
-            _backgroundNode->incrementOffset(ccp(2000, 0), background);
-        }
-    }
+    _backgroundNode->updatePosition();
+    // for (int ii = 0; ii < backGrounds->count(); ii++)
+    // {
+    //     CCSprite *background = (CCSprite *)(backGrounds->objectAtIndex(ii));
+    //     float xPosition = _backgroundNode->convertToWorldSpace(background->getPosition()).x;
+    //     float size = background->getContentSize().width;
+    //     if (xPosition < -size)
+    //     {
+    //         _backgroundNode->incrementOffset(ccp(2000, 0), background);
+    //     }
+    // }
 }
